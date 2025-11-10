@@ -16,8 +16,8 @@
         }
 
         body {
-            font-family: 'MS Pゴシック', 'Hiragino Kaku Gothic Pro', sans-serif;
-            background: #f5f5f5;
+            font-family: 'MS Pゴシック', 'Hiragino Kaku Gothic Pro', 'Segoe UI', sans-serif;
+            background: white;
             color: #333;
             line-height: 1.5;
         }
@@ -26,14 +26,14 @@
             width: 100%;
         }
 
-        /* Header Styles */
+        /* Header Main - with blue wave */
         #header_main {
-            background: white;
-            padding: 20px 40px;
-            border-bottom: 1px solid #ddd;
+            background: linear-gradient(to bottom, white, white 60%, #e3f2fd 60%, #e3f2fd);
+            padding: 20px 40px 40px 40px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            border-bottom: 2px solid #0072c6;
         }
 
         #header_logo {
@@ -44,23 +44,27 @@
 
         #header_logo h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0072c6;
+            letter-spacing: 1px;
         }
 
-        #header_logo img {
-            height: 31px;
-            width: auto;
+        #header_logo span {
+            font-size: 13px;
+            color: #666;
         }
 
         #header_keyword {
-            font-size: 14px;
-            color: #666;
+            font-size: 13px;
+            color: #0072c6;
             font-weight: normal;
+            text-align: right;
         }
 
         #header-link {
             background: white;
-            padding: 8px 40px;
+            padding: 12px 40px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -82,6 +86,15 @@
             text-decoration: underline;
         }
 
+        /* Date Display */
+        .date-display {
+            font-size: 13px;
+            color: #666;
+            padding: 12px 40px;
+            border-bottom: 1px solid #ddd;
+            background: white;
+        }
+
         /* Main Content */
         #main {
             display: flex;
@@ -89,6 +102,7 @@
             margin: 0 auto;
             gap: 30px;
             padding: 30px 40px;
+            background: white;
         }
 
         #contents_block {
@@ -101,7 +115,7 @@
             font-weight: 600;
             color: #0072c6;
             margin-bottom: 15px;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #0072c6;
         }
 
@@ -109,13 +123,14 @@
             background: white;
             padding: 20px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 0;
             margin-bottom: 30px;
         }
 
         .infoArea p {
             margin: 10px 0;
             font-size: 13px;
+            line-height: 1.6;
         }
 
         .infoArea a {
@@ -147,19 +162,22 @@
         }
 
         #side_menu_block {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            background: #fffacd;
+            border: 1px solid #f0e68c;
+            border-radius: 0;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         #side_menu h2 {
             margin: 0;
             background: #f0f0f0;
-            padding: 12px;
-            font-size: 14px;
+            padding: 10px 12px;
+            font-size: 13px;
             border-bottom: 1px solid #ddd;
             text-align: center;
+            color: #333;
+            font-weight: 600;
         }
 
         #side_menu h2 img {
@@ -169,6 +187,7 @@
 
         .login_block {
             padding: 20px;
+            background: #fffacd;
         }
 
         .login_block form {
@@ -176,7 +195,7 @@
         }
 
         .login_block form div {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .login_block label {
@@ -192,9 +211,10 @@
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
-            border-radius: 3px;
+            border-radius: 0;
             font-size: 12px;
             font-family: inherit;
+            background: white;
         }
 
         .login_block input[type="email"]:focus,
@@ -209,7 +229,7 @@
             background: #fff3cd;
             color: #856404;
             padding: 10px;
-            border-radius: 3px;
+            border-radius: 0;
             margin-bottom: 15px;
             font-size: 12px;
             border: 1px solid #ffeaa7;
@@ -244,7 +264,23 @@
         /* Login Button */
         .loginBtn {
             text-align: center;
-            margin: 20px 0;
+            margin: 15px 0;
+        }
+
+        .loginBtn button {
+            width: 100%;
+            background: #ff9900 !important;
+            color: white !important;
+            border: none !important;
+            padding: 10px 30px !important;
+            border-radius: 0 !important;
+            cursor: pointer !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+
+        .loginBtn button:hover {
+            background: #ff8800 !important;
         }
 
         .loginBtn input[type="image"] {
@@ -285,12 +321,18 @@
             list-style: none;
             padding: 15px 0 0 0;
             margin: 15px 0 0 0;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #f0e68c;
             font-size: 11px;
+            background: #fffacd;
         }
 
         .supportLink li {
             margin: 8px 0;
+        }
+
+        .supportLink li:before {
+            content: "🟠 ";
+            margin-right: 5px;
         }
 
         .supportLink a {
@@ -304,7 +346,7 @@
 
         /* Footer */
         #footerContainer {
-            background: #f0f0f0;
+            background: white;
             padding: 30px 40px;
             border-top: 1px solid #ddd;
             margin-top: 40px;
@@ -312,7 +354,8 @@
 
         #footerLink {
             margin-bottom: 20px;
-            font-size: 12px;
+            font-size: 11px;
+            line-height: 1.8;
         }
 
         #footerLink a {
@@ -324,25 +367,11 @@
             text-decoration: underline;
         }
 
-        #footerLink br {
-            margin: 10px 0;
-        }
-
         #footerCopyright {
             text-align: center;
             font-size: 11px;
             color: #666;
             margin-top: 20px;
-        }
-
-        /* Date Display */
-        .date-display {
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 20px;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
         }
 
         /* Responsive */
@@ -373,11 +402,11 @@
         <!-- Header -->
         <div id="header_main">
             <div id="header_logo">
-                <h1>BIGLOBE ロゴ</h1>
-                <span style="font-size: 14px; color: #0072c6; font-weight: 600;">BIGLOBEメール</span>
+                <h1>BIGLOBE</h1>
+                <span style="font-size: 12px; color: #666;">メール</span>
             </div>
             <div id="header_keyword">
-                <strong>メールがもっと便利で楽しくなる！</strong>
+                メールがもっと便利で楽しくなる！
             </div>
         </div>
 
